@@ -1,7 +1,7 @@
 # 原生JS实现微信公众号或网页使用下拉加载和上拉刷新
 > 微信浏览器打开网页显示网址安全信息解决办法,网上很多办法，也找了很久，但是最新的很多用不了。
 > 先看看效果，是不是亲想要的，可以跳过，以免浪费宝贵时间。用微信打开以下网址浏览效果（用微信打开）：http://atigege.com/case/web/wxPull/
-![qr code][http://atigege.com/case/web/wxPull/qr.png]
+ ![image](https://raw.githubusercontent.com/gavinjzx/wxPull/master/qr.png)
 ## 我的解决思路：
 > 1、直接在样式表里的html和body上加上：touch-action:none;
     html,body{touch-action:none}
