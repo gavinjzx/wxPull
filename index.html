@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>下拉刷新和下拉加载</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!--<header>头部</header>-->
+<main class="container">
+    <div id="downMessage">
+        <div class="txt">下拉刷新</div>
+    </div>
+    <div id="pull">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+            <li>32</li>
+            <li>33</li>
+            <li>34</li>
+            <li>35</li>
+            <li>36</li>
+            <li>37</li>
+            <li>38</li>
+            <li>39</li>
+            <li>40</li>
+            <li>41</li>
+            <li>42</li>
+            <li>43</li>
+            <li>44</li>
+            <li>45</li>
+            <li>46</li>
+            <li>47</li>
+            <li>48</li>
+            <li>49</li>
+            <li>50</li>
+        </ul>
+    </div>
+    <div id="upMessage">
+        <div class="txt">上拉加载</div>
+    </div>
+</main>
+<!--<footer>底部</footer>-->
+</body>
+<script src="js/pull.js"></script>
+<script>
+    var pullObj = pull.init({
+        elID: "#pull",//下拉对象ID
+        upMessageID: "#upMessage",//上拉加载提示信息ID
+        downMessageID: "#downMessage",//下拉刷新提示信息ID
+        totalRecords: 60,
+        upCallback: function () {//上拉刷新回调函数,回调后返回总记录数
+            console.log("上拉加载");
+            //createLi(10);
+//            return 100;
+        },
+        downCallback: function () {//下拉加载回调函数
+            var time = new Date();
+            document.querySelector("#pull li:first-child").innerHTML = "1、时间：" + time.getHours() + ":" + time.getMinutes() + " " + time.getSeconds();
+
+        }
+    });
+    function createLi(num) {
+//        pullObj.status.aa = "11";
+        var length = document.querySelectorAll("#pull li").length;
+        for (var i = length; i < length + num; i++) {
+            var li = document.createElement("li");
+            li.innerHTML = i + 1;
+            document.querySelector("#pull").appendChild(li);
+        }
+    }
+</script>
+</html>
