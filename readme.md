@@ -11,38 +11,39 @@
 > init中调用extend方法，重置config的值
 ### 监听touchstart,touchmove,touchend事件
 #### 监听touchstart
-> 1、记录下开始滑动位置（this.status.start）
-> 2、记录下滑动时滚动条的位置(this.status.startScrollTop)
-> 2、清除滑动方向(this.status.direction)
+1. 记录下开始滑动位置（this.status.start）
+2. 记录下滑动时滚动条的位置(this.status.startScrollTop)
+3. 清除滑动方向(this.status.direction)
 #### 监听touchmove
-> 1、记录下当前的位置(this.status.end)
-> 2、记录下手指位移值(this.status.offset)
-> 3、清除动画时间(this.setTransition(0))
-> 4、当滚动条没有到底时，滑动只控制滚动条
-> 5、根据滑动的方向，确认方向，方向一旦赋值，在松开手指前不变更（this.status.direction）
-> 6、如果方向向上，执行this.touchMoveUp();
-> 7、如果方向向下，执行this.couchMoveDown();
+1. 记录下当前的位置(this.status.end)
+2. 记录下手指位移值(this.status.offset)
+3. 清除动画时间(this.setTransition(0))
+4. 当滚动条没有到底时，滑动只控制滚动条
+5. 根据滑动的方向，确认方向，方向一旦赋值，在松开手指前不变更（this.status.direction）
+6. 如果方向向上，执行this.touchMoveUp();
+7. 如果方向向下，执行this.couchMoveDown();
 #### 监听touchEnd
-> 1、根据方向，this.status.direction="down"时，执行向上this.touchEndDown();
-> 2、根据方向，this.status.direction="up"时，执行向上this.touchEndUp();
-> 3、设置this.status.isCanMove=false;
-> 4、this.setTransition(1),把动画时间设为1秒
-> 5、this.back(0)复位对象。
+1. 根据方向，this.status.direction="down"时，执行向上this.touchEndDown();
+2. 根据方向，this.status.direction="up"时，执行向上this.touchEndUp();
+3. 设置this.status.isCanMove=false;
+4. this.setTransition(1),把动画时间设为1秒
+5. this.back(0)复位对象。
 
 
 ## 使用方法
 #### 禁用touch-action
 > html,body{touch-action:none}
 #### 添加HTML元素
-> 1、下拉刷新提示容器:<div id="downMessage"><div class="txt">下拉刷新</div></div>
-> 2、滚动对象:<div id="pull">......</div>
-> 3、上拉加载提示容器:<div id="upMessage"><div class="txt">上拉加载</div></div>
+> 1. 下拉刷新提示容器:`<div id="downMessage"><div class="txt">下拉刷新</div></div>`
+> 2. 滚动对象:`<div id="pull">......</div>`
+> 3. 上拉加载提示容器:`<div id="upMessage"><div class="txt">上拉加载</div></div>`
 #### 开始调用：
-> var pullObj = pull.init(option)
-> option选项见下一项
+> + var pullObj = pull.init(option)
+> + option选项见下一项
 
 ## 配置参数
-> var pullObj = pull.init({
+```
+var pullObj = pull.init({
         elID: "#pull",//下拉对象ID<font color=ff0000>必填</font>
         upMessageID: "#upMessage",//上拉加载提示信息ID<font color=ff0000>必填</font>
         downMessageID: "#downMessage",//下拉刷新提示信息ID<font color=ff0000>必填</font>
@@ -51,7 +52,9 @@
         upCallback:function(){这里填写上拉加载回调函数},
         downCallback:function(){这里填写下拉刷新回调函数}
         }
+```
 #### 参数说明：
+```
 >        elID: "",//控制ID
 >         upMessageID: "",//上拉加载提示ID
 >         downMessageID: "",//下拉刷新提示ID
@@ -70,3 +73,4 @@
 >         downCallback: null,//下拉加载回调函数
 >         totalRecords: 0,//总记录数
 >         pageSize: 20//页面记录数
+```
