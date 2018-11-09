@@ -55,22 +55,22 @@ var pullObj = pull.init({
 ```
 #### 参数说明：
 ```
->        elID: "",//控制ID
->         upMessageID: "",//上拉加载提示ID
->         downMessageID: "",//下拉刷新提示ID
->         upPullToLoadMore: '上拉加载', // 上拉加载提示
->         upReleaseToRefresh: '松开加载', //松开加载提示
->         upRefreshing: '加载中…', // 加载中文字提示
->         upIsLastMessage: "已经是最后一页",//最后一页文字提示
->         downPullToRefresh: '下拉刷新', // 下拉刷新文字提示
->         downReleaseToRefresh: '松开刷新', //松开刷新文字提示
->         downRefreshing: '刷新中…', // 刷新中文字提示
->         threshold: 60,//移动距离阀值
->         maxOffset: 150,//最大可拖动距离
->         actionOffset: 60,//可引起操作的拖动距离
->         method: "up,down",//包括方法，up：上拉加载,down:下拉刷新
->         upCallback: null,//上拉刷新回调函数
->         downCallback: null,//下拉加载回调函数
->         totalRecords: 0,//总记录数
->         pageSize: 20//页面记录数
+         elID: "",//控制ID
+         upMessageID: "",//上拉加载提示ID
+         downMessageID: "",//下拉刷新提示ID
+         upPullToLoadMore: '上拉加载', // 上拉加载提示
+         upReleaseToRefresh: '松开加载', //松开加载提示
+         upRefreshing: '加载中…', // 加载中文字提示
+         upIsLastMessage: "已经是最后一页",//最后一页文字提示
+         downPullToRefresh: '下拉刷新', // 下拉刷新文字提示
+         downReleaseToRefresh: '松开刷新', //松开刷新文字提示
+         downRefreshing: '刷新中…', // 刷新中文字提示
+         threshold: 60,//移动距离阀值
+         maxOffset: 150,//最大可拖动距离
+         actionOffset: 60,//可引起操作的拖动距离
+         method: "up,down",//包括方法，up：上拉加载,down:下拉刷新
+         upCallback: null,//上拉刷新回调函数
+         downCallback: null,//下拉加载回调函数
+         totalRecords: 0,//总记录数
+         pageSize: 20//页面记录数
 ```
